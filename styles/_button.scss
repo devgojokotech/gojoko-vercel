@@ -1,0 +1,55 @@
+@tailwind components;
+
+@layer components {
+  .btn {
+    @apply lg-bold font-josephin-sans w-fit px-4 py-2 first-letter:uppercase lowercase transition-all duration-500 ease-in-out focus:outline-none focus:ring-1 active:scale-90 font-semibold;
+
+    &.primary {
+      @apply border border-primary-600 bg-primary-600 text-base-white hover:bg-primary-700 focus:ring-primary-400 active:bg-primary-800;
+
+      &.disabled {
+        @apply border-neutral-300 bg-neutral-300 text-base-white focus:ring-0 active:scale-100;
+      }
+    }
+
+    &.transparent-primary {
+      @apply border border-white bg-white text-primary-500 hover:text-base-white hover:bg-primary-600 focus:ring-primary-400 active:bg-primary-600;
+    }
+
+    &.secondary {
+      @apply border border-gray-600 bg-white text-gray-600 hover:bg-primary-700 hover:border-primary-600 hover:text-base-white focus:ring-primary-400 active:bg-primary-800 active:text-base-white;
+
+      &.disabled {
+        @apply border-neutral-300 bg-transparent text-neutral-300 focus:ring-0 active:scale-100;
+      }
+    }
+
+    &.secondary-outline {
+      @apply border border-white text-base-white hover:bg-white hover:text-primary-700;
+
+      &.disabled {
+        @apply border-neutral-300 bg-transparent text-neutral-300 focus:ring-0 active:scale-100;
+      }
+    }
+
+    &.neutral-secondary {
+      @apply border border-neutral-600 bg-transparent text-neutral-600 hover:bg-primary-700 hover:text-base-white focus:ring-primary-400 focus:bg-primary-700 focus:text-base-white active:bg-neutral-800 active:text-base-white active:bg-neutral-600;
+
+      &.disabled {
+        @apply border-neutral-300 bg-transparent text-neutral-300 focus:ring-0 active:scale-100;
+      }
+    }
+
+    &.neutral {
+      @apply border border-neutral-600 bg-transparent text-neutral-600 hover:bg-neutral-600 hover:text-base-white focus:ring-neutral-400 focus:shadow-primary-600 focus:shadow-none;
+
+      &.disabled {
+        @apply border-neutral-300 bg-transparent text-neutral-300 focus:ring-0 active:scale-100;
+      }
+    }
+
+    &.transparent {
+      @apply border border-white bg-transparent text-base-white hover:bg-white hover:text-neutral-600 active:bg-white active:text-neutral-600;
+    }
+  }
+}

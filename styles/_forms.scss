@@ -1,0 +1,98 @@
+@tailwind components;
+
+@layer components {
+  .form-control {
+    @apply mt-2 rounded-sm border border-gray-300 bg-white px-4 leading-10;
+
+    .form-field-box-shadow {
+      @apply shadow-form-input;
+    }
+
+    &:focus {
+      @apply border-primary-1000 shadow-form-input;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &.ng-invalid.ng-touched:not(:disabled):not([readonly]) {
+      @apply border-form-border shadow-form-invalid;
+    }
+
+    &:disabled,
+    &[readonly] {
+      @apply rounded border-gray-400 bg-gray-300 text-black opacity-50 shadow-none;
+    }
+  }
+
+  .input-with-euro{
+    @apply relative h-10 before:content-['£'] before:absolute before:h-10 before:flex before:items-center before:bg-gray-100 before:px-4 before:left-px before:top-[9px];
+  }
+
+  .radio-btn-shadow {
+    @apply shadow-form-input;
+    border: 1px solid white;
+  }
+
+  .custom-radio-btn {
+    label {
+      @apply md-regular neutral flex h-full w-full cursor-pointer items-center justify-center rounded border border-neutral-600 px-1.5 py-1.5 text-center capitalize text-neutral-600 transition duration-300 ease-in-out focus:outline-none focus:ring-1 active:scale-90 sm:block  sm:px-2 sm:py-2 md:px-4;
+    }
+
+    .radio-input:checked + label {
+      @apply radio-btn-shadow block w-full cursor-pointer border bg-primary-600 text-center font-bold text-base-white;
+    }
+
+    &.ng-invalid.ng-touched:not(:disabled):not([readonly]) {
+      label {
+        @apply md-regular rounded px-4 py-2 capitalize transition duration-300 ease-in-out focus:outline-none focus:ring-1 active:scale-90 md-regular neutral radio-btn-shadow block w-full cursor-pointer bg-base-white text-center shadow-form-invalid;
+        border: 1px solid var(--color-form-error-border-color);
+      }
+    }
+  }
+
+  .warning-border {
+    @apply shadow-form-checkbox-warning;
+  }
+
+  .form-invalid {
+    &.ng-invalid.ng-touched:not(:disabled):not([readonly]) {
+      @apply border-form-border shadow-form-invalid;
+    }
+  }
+
+  .dropdown {
+    select {
+      @apply right-6 h-10 px-4 w-full bg-arrow bg-right bg-no-repeat bg-origin-content bg-blend-darken bg-[size:1rem] appearance-none cursor-pointer;
+      option {
+        @apply py-2;
+      }
+    }
+
+    option {
+      @apply leading-9;
+    }
+
+    ng-select {
+      @apply h-10 pe-4 align-middle text-neutral-1000;
+      ng-option {
+        @apply -ms-4 w-auto;
+      }
+      .ng-dropdown-panel {
+        @apply -ms-4 w-full rounded-[4px] border bg-white text-black shadow-dropdown-shadow;
+      }
+    }
+  }
+
+  .checkbox-input {
+    @apply h-5 w-5 rounded-lg bg-neutral-600 accent-primary-600 focus:shadow-form-checkbox;
+  }
+
+  .ng-option {
+    @apply py-1.5 ps-2.5 text-black hover:bg-neutral-50;
+    &.ng-option-selected {
+      @apply bg-neutral-100 font-semibold;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@tailwind components;
+
+@layer components {
+  .goj-cpm {
+    // common alignment against container for inside content
+    // @apply px-3 py-3 sm:py-5 md:px-5 md:py-8 lg:px-9 xl:px-12;
+    @apply px-8 py-[3.75rem] sm:py-[5rem] xl:px-10;
+  }
+
+
+  .scrollbar {
+
+    /* Define custom scrollbar styles */
+    &::-webkit-scrollbar {
+      @apply w-0 rounded-r-[0.25rem];
+    }
+
+    &::-webkit-scrollbar-track {
+      @apply rounded-r-[0.25rem];
+    }
+
+    &.width {
+      &::-webkit-scrollbar {
+        @apply w-2;
+      }
+
+      &::-webkit-scrollbar-track {
+        @apply rounded-none;
+      }
+    }
+
+    /* Track */
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      @apply rounded-r-[0.25rem] bg-neutral-300;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      @apply bg-neutral-300;
+    }
+  }
+
+  .cal-slider {
+    @apply [&::-moz-range-track]:h-[10px] [&::-moz-range-track]:h-[10px] [&::-moz-range-track]:rounded-full [&::-moz-range-track]:bg-black/25 [&::-moz-range-thumb]:-mt-1 [&::-moz-range-thumb]:h-[20px] [&::-moz-range-thumb]:w-[20px] [&::-moz-range-thumb]:appearance-none [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-2 [&::-moz-range-thumb]:border-primary-500 [&::-moz-range-thumb]:bg-white [&::-webkit-slider-runnable-track]:h-[10px] [&::-webkit-slider-runnable-track]:rounded-full [&::-webkit-slider-runnable-track]:bg-black/25 [&::-webkit-slider-thumb]:-mt-1 [&::-webkit-slider-thumb]:h-[20px] [&::-webkit-slider-thumb]:w-[20px] [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-primary-500 [&::-webkit-slider-thumb]:bg-white;
+  }
+
+  .scrollbar-blog {
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+    }
+
+    &::-webkit-scrollbar:horizontal {
+      @apply h-2;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      @apply rounded-lg border-2 border-white bg-gray-500;
+    }
+  }
+}
+
+@layer utilities {
+  html {
+    @apply scroll-smooth;
+  }
+}
